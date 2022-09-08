@@ -3,10 +3,9 @@ var juego = require('../model/juego');
 
 module.exports={
 
-    index:function(req,res) {
+    getJuegos:function(req,res) {
         juego.obtener(conexion, function (err, datos){
-            console.log(datos)
-            //res.render('juegos/index', {title: 'Aplicacion'});        
+            console.log(datos)            
              res.json(datos);
         })
         
@@ -16,8 +15,7 @@ module.exports={
         juego.crear(conexion, req.body, function (err, respuesta){
             console.log(respuesta)            
             res.json(respuesta);
-        })
-        //res.json(req.body["nombre"]);
+        })        
         
     },
     deleteJuego:function(req,res) {
@@ -25,8 +23,7 @@ module.exports={
         juego.borrar(conexion, req.body, function (err, respuesta){
             console.log(respuesta)            
             res.json(respuesta);
-        })
-        //res.json(req.body["nombre"]);
+        })        
         
     },
     updateJuego:function(req,res) {
@@ -34,8 +31,7 @@ module.exports={
         juego.actualizar(conexion, req.body, function (err, respuesta){
             console.log(respuesta)             
             res.json(respuesta);
-        })
-        //res.json(req.body["nombre"]);
+        })        
         
     }
 }
