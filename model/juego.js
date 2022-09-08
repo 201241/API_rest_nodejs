@@ -1,6 +1,6 @@
 module.exports={
     obtener:function(conexion, funcion) {
-        conexion.query("SELECT * FROM juegos_pirata.juegos", funcion);
+        conexion.query("SELECT * FROM juegos", funcion);
     },
     crear:function(conexion, datos,funcion) {
         conexion.query(" INSERT INTO juegos (nombre, plataforma, descripcion, genero, desarrolladora) VALUES ('"+datos["nombre"]+"', '"+datos["plataforma"]+"', '"+datos["descripcion"]+"', '"+datos["genero"]+"', '"+datos["desarrolladora"]+"') ", funcion);
